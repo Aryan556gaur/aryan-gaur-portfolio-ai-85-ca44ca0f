@@ -119,7 +119,7 @@ const Hero = () => {
               <span>View My Work</span>
             </a>
             <a 
-              href="https://drive.google.com/file/d/1i9seXHGDJwSYXChJHpraFAC8HtFa2EGd/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1xEY-I6x_jy1__DnobPXAcsjncP-hWPAb/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 glass-effect border border-primary/20 text-primary font-semibold rounded-xl hover:bg-primary/10 transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center"
