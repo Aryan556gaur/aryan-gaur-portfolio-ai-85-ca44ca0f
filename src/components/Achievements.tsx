@@ -12,7 +12,7 @@ const Achievements = () => {
         "Rating: 1800",
         "Top Problem Solver"
       ],
-      link: "https://leetcode.com/u/Aryan556gaur/",
+      link: "https://leetcode.com/u/12Aryanleet/",
       color: "from-orange-400 to-yellow-500"
     },
     {
@@ -23,19 +23,8 @@ const Achievements = () => {
         "Highest rating: 1362",
         "Strong algorithmic skills"
       ],
-      link: "https://codeforces.com/profile/",
+      link: "https://codeforces.com/profile/aryangaur5562311",
       color: "from-blue-400 to-cyan-500"
-    },
-    {
-      name: "CodeChef",
-      icon: "👨‍🍳",
-      stats: [
-        "3 Star rating (1788)",
-        "Notable contest rankings",
-        "Complex problem solving"
-      ],
-      link: "https://www.codechef.com/users/",
-      color: "from-amber-500 to-orange-500"
     }
   ];
 

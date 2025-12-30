@@ -20,18 +20,14 @@ const About = () => {
             </p>
             
             <p className="text-muted-foreground leading-relaxed">
-              Currently working as an{' '}
-              <span className="font-semibold text-foreground">
-                Intern Software Developer at the Indian Air Force
-              </span>
-              . I specialize in RAG systems, machine learning, and deep learning systems, 
+              I specialize in RAG systems, machine learning, and deep learning systems, 
               with experience building production-ready AI solutions that improve retrieval 
               performance and enable privacy-aware model deployment.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              I regularly sharpen problem-solving through competitive programming on LeetCode, 
-              CodeChef, and Codeforces with over 300+ DSA problems solved.
+              I regularly sharpen problem-solving through competitive programming on LeetCode 
+              and Codeforces with over 300+ DSA problems solved.
             </p>
           </div>
 
