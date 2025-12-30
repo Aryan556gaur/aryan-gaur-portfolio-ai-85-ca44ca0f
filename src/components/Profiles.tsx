@@ -22,22 +22,15 @@ const Profiles = () => {
       name: "LeetCode",
       icon: "🏆",
       description: "Problem Solving",
-      link: "https://leetcode.com/u/Aryan556gaur/",
+      link: "https://leetcode.com/u/12Aryanleet/",
       color: "bg-orange-500"
     },
     {
       name: "Codeforces",
       icon: "💻",
       description: "Competitive Programming",
-      link: "https://codeforces.com/profile/",
+      link: "https://codeforces.com/profile/aryangaur5562311",
       color: "bg-cyan-500"
-    },
-    {
-      name: "CodeChef",
-      icon: "👨‍🍳",
-      description: "Contest Platform",
-      link: "https://www.codechef.com/users/",
-      color: "bg-amber-600"
     }
   ];
 
