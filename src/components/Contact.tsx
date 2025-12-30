@@ -1,40 +1,8 @@
 
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import React from 'react';
+import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-  };
-
   const contactInfo = [
     {
       icon: Mail,
@@ -56,166 +24,84 @@ const Contact = () => {
     }
   ];
 
+  const socialLinks = [
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/Aryan556gaur"
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/aryan-gaur-b49550258"
+    }
+  ];
+
   return (
-    <section id="contact" className="py-24 relative">
-      <div className="container mx-auto px-8 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            Let's Connect
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto mb-8"></div>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Ready to collaborate on innovative AI solutions? Let's discuss your next project or opportunity.
-          </p>
-        </div>
+    <section id="contact" className="section-padding bg-secondary/30">
+      <div className="container-custom">
+        {/* Section Title */}
+        <h2 className="section-title">Contact Me</h2>
+        <div className="section-underline mb-12"></div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-              <p className="text-gray-300 leading-relaxed mb-8">
-                I'm currently available for internships, freelance projects, and full-time opportunities 
-                in AI development, machine learning, and software engineering. Let's build something amazing together!
-              </p>
-            </div>
+        <div className="max-w-2xl mx-auto text-center">
+          {/* Email as primary CTA */}
+          <a 
+            href="mailto:aryangaur556@gmail.com"
+            className="text-xl md:text-2xl font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-2 mb-8"
+          >
+            <Mail size={24} />
+            aryangaur556@gmail.com
+          </a>
 
-            {/* Contact Methods */}
-            <div className="space-y-6">
-              {contactInfo.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  className="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-lg border border-purple-500/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 group"
-                >
-                  <div className="p-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <item.icon size={24} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">{item.label}</p>
-                    <p className="text-white font-semibold group-hover:text-cyan-400 transition-colors duration-300">
-                      {item.value}
-                    </p>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
-                <a 
-                  href="https://github.com/Aryan556gaur" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-800 rounded-lg border border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-110 group"
-                >
-                  <Github size={24} className="text-gray-300 group-hover:text-cyan-400 transition-colors" />
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/aryan-gaur-b49550258" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-800 rounded-lg border border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-110 group"
-                >
-                  <Linkedin size={24} className="text-gray-300 group-hover:text-cyan-400 transition-colors" />
-                </a>
-              </div>
-            </div>
-
-            {/* Availability Status */}
-            <div className="bg-gradient-to-r from-green-900/30 to-green-800/30 p-6 rounded-lg border border-green-500/30">
-              <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
-                <div className="w-3 h-3 bg-green-400 rounded-full absolute"></div>
-                <span className="text-green-400 font-semibold">Available for opportunities</span>
-              </div>
-              <p className="text-gray-300 text-sm mt-2">
-                Currently seeking internships and project collaborations in AI/ML
-              </p>
-            </div>
+          {/* Contact Cards */}
+          <div className="grid sm:grid-cols-3 gap-4 mb-10">
+            {contactInfo.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className="card-base card-hover p-4 text-center group"
+              >
+                <item.icon 
+                  size={20} 
+                  className="text-primary mx-auto mb-2" 
+                />
+                <p className="text-xs text-muted-foreground mb-1">{item.label}</p>
+                <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                  {item.value}
+                </p>
+              </a>
+            ))}
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-slate-800/50 p-8 rounded-lg border border-purple-500/20">
-            <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-gray-300 text-sm font-medium mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none text-white transition-colors duration-300"
-                    placeholder="John Doe"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-gray-300 text-sm font-medium mb-2">
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none text-white transition-colors duration-300"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-gray-300 text-sm font-medium mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none text-white transition-colors duration-300"
-                  placeholder="Project Collaboration"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-gray-300 text-sm font-medium mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-slate-700 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none text-white transition-colors duration-300 resize-none"
-                  placeholder="Tell me about your project or opportunity..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 hover:scale-105"
+          {/* Social Links */}
+          <div className="flex justify-center gap-4">
+            {socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 card-base card-hover group"
+                aria-label={link.label}
               >
-                <Send size={20} />
-                <span>Send Message</span>
-              </button>
-            </form>
+                <link.icon 
+                  size={24} 
+                  className="text-muted-foreground group-hover:text-primary transition-colors" 
+                />
+              </a>
+            ))}
+          </div>
+
+          {/* Availability */}
+          <div className="mt-10 p-4 bg-green-50 border border-green-200 rounded-xl inline-flex items-center gap-3">
+            <div className="relative">
+              <span className="w-3 h-3 bg-green-500 rounded-full block"></span>
+              <span className="w-3 h-3 bg-green-500 rounded-full absolute top-0 animate-ping"></span>
+            </div>
+            <span className="text-green-700 font-medium text-sm">
+              Available for opportunities
+            </span>
           </div>
         </div>
       </div>
