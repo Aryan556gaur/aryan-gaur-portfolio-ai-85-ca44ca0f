@@ -5,21 +5,21 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "DharmaDarshan",
-      period: "January 2025 – April 2025",
-      description: "AI-powered spiritual guidance system using Bhagavad Gita and Mahabharata insights for character building and decision-making.",
+      title: "PolicyPulse AI",
+      period: "April 2025 – November 2025",
+      description: "Government healthcare policy intelligence platform analyzing 52 Indian national and state-level health policy documents.",
       achievements: [
-        "89% accuracy in answering queries using Bhagavad Gita and Mahabharata insights.",
-        "Gamified character-building, improving users' decision-making and values.",
-        "60% faster retrieval using LangChain hybrid search."
+        "Analyzed 118,000+ lines (9.6M tokens) across 12 governance dimensions.",
+        "Achieved 91% clause-level source attribution accuracy and 87% semantic relevance.",
+        "Reduced public policy review and research effort by 76%."
       ],
-      technologies: ["RAG", "LangChain", "Gemini", "Agents", "NLP", "Flask"],
-      githubUrl: "https://github.com/Aryan556gaur/DharmaDarshan",
-      liveUrl: "https://dharmadarshan.netlify.app"
+      technologies: ["RAG", "Agents", "Langchain", "Gemini", "NLP", "Flask"],
+      githubUrl: "https://github.com/Aryan556gaur/PolicyPulse",
+      liveUrl: "https://policypulse.streamlit.app"
     },
     {
       title: "Federated Credit System",
-      period: "March 2025 – Present",
+      period: "March 2025 – June 2025",
       description: "Privacy-preserving federated learning system for credit scoring across distributed clients.",
       achievements: [
         "Implemented federated learning across 25+ clients, achieving 84% accuracy.",
@@ -41,7 +41,7 @@ const Projects = () => {
       ],
       technologies: ["Python", "Machine Learning", "NLP", "KNN"],
       githubUrl: "https://github.com/Aryan556gaur/Roommate_Dekho",
-      liveUrl: null
+      liveUrl: "https://roommate-dekho.streamlit.app"
     }
   ];
 
