@@ -15,7 +15,7 @@ const Projects = () => {
       ],
       technologies: ["RAG", "Agents", "Langchain", "Gemini", "NLP", "Flask"],
       githubUrl: "https://github.com/Aryan556gaur/PolicyPulse",
-      liveUrl: "https://policypulse.streamlit.app"
+      liveUrl: "https://bharat-health-policy-ai.vercel.app/"
     },
     {
       title: "Federated Credit System",
@@ -41,7 +41,7 @@ const Projects = () => {
       ],
       technologies: ["Python", "Machine Learning", "NLP", "KNN"],
       githubUrl: "https://github.com/Aryan556gaur/Roommate_Dekho",
-      liveUrl: "https://roommate-dekho.streamlit.app"
+      liveUrl: "https://roommate-dekho.vercel.app/"
     }
   ];
 
