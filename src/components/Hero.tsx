@@ -29,15 +29,15 @@ const Hero = () => {
 
     const createParticles = () => {
       particles = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 8000);
+      const particleCount = Math.floor((canvas.width * canvas.height) / 10000);
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
+          vx: (Math.random() - 0.5) * 1.2,
+          vy: (Math.random() - 0.5) * 1.2,
           size: Math.random() * 2.5 + 1.5,
-          opacity: Math.random() * 0.4 + 0.4
+          opacity: Math.random() * 0.4 + 0.5
         });
       }
     };
