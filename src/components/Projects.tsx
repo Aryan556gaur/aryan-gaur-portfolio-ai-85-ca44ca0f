@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Projects = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   const projects = [
     {
       title: "PolicyPulse AI",
@@ -46,97 +49,84 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="section-padding">
-      <div className="container-custom">
-        {/* Section Title */}
-        <h2 className="section-title">Projects</h2>
-        <div className="section-underline mb-12"></div>
+    <section id="projects" className="section-padding relative overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 
-        {/* Projects Grid */}
+      <div className="container-custom" ref={ref}>
+        <h2 className={`section-title scroll-hidden ${isVisible ? 'scroll-visible' : ''}`}>Projects</h2>
+        <div className={`section-underline mb-12 scroll-hidden ${isVisible ? 'scroll-visible' : ''} stagger-1`}></div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="card-base card-hover p-6 flex flex-col"
+              className={`card-base card-hover p-6 flex flex-col group relative overflow-hidden scroll-scale-hidden ${isVisible ? 'scroll-scale-visible' : ''} stagger-${index + 2}`}
             >
-              {/* Header */}
-              <div className="mb-4">
-                <h3 className="text-xl font-bold text-foreground mb-1">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">{project.period}</p>
-              </div>
+              {/* Hover gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Top accent bar */}
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-              {/* Technologies */}
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {project.technologies.slice(0, 4).map((tech) => (
-                  <span 
-                    key={tech}
-                    className="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
-                {project.technologies.length > 4 && (
-                  <span className="px-2 py-0.5 bg-secondary text-muted-foreground text-xs rounded">
-                    +{project.technologies.length - 4}
-                  </span>
-                )}
-              </div>
+              <div className="relative z-10 flex flex-col flex-grow">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">{project.period}</p>
+                </div>
 
-              {/* Description */}
-              <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                {project.description}
-              </p>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {project.technologies.slice(0, 4).map((tech) => (
+                    <span key={tech} className="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded font-medium">
+                      {tech}
+                    </span>
+                  ))}
+                  {project.technologies.length > 4 && (
+                    <span className="px-2 py-0.5 bg-secondary text-muted-foreground text-xs rounded">
+                      +{project.technologies.length - 4}
+                    </span>
+                  )}
+                </div>
 
-              {/* Achievements */}
-              <div className="space-y-2 mb-6 flex-grow">
-                {project.achievements.slice(0, 2).map((achievement, achievementIndex) => (
-                  <div key={achievementIndex} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>
-                    <p className="text-muted-foreground text-xs leading-relaxed">{achievement}</p>
-                  </div>
-                ))}
-              </div>
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{project.description}</p>
 
-              {/* Links */}
-              <div className="flex gap-3 mt-auto">
-                <a 
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  <Github size={16} />
-                  Code
-                </a>
-                {project.liveUrl && (
+                <div className="space-y-2 mb-6 flex-grow">
+                  {project.achievements.slice(0, 2).map((achievement, achievementIndex) => (
+                    <div key={achievementIndex} className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>
+                      <p className="text-muted-foreground text-xs leading-relaxed">{achievement}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex gap-3 mt-auto">
                   <a 
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={project.githubUrl} target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
                   >
-                    <ExternalLink size={16} />
-                    Demo
+                    <Github size={16} /> Code
                   </a>
-                )}
+                  {project.liveUrl && (
+                    <a 
+                      href={project.liveUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      <ExternalLink size={16} /> Demo
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* More Projects Link */}
-        <div className="text-center mt-10">
+        <div className={`text-center mt-10 scroll-hidden ${isVisible ? 'scroll-visible' : ''} stagger-5`}>
           <a 
-            href="https://github.com/Aryan556gaur"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://github.com/Aryan556gaur" target="_blank" rel="noopener noreferrer"
             className="btn-secondary"
           >
-            <Github size={18} />
-            More Projects
-            <ExternalLink size={14} />
+            <Github size={18} /> More Projects <ExternalLink size={14} />
           </a>
         </div>
       </div>
