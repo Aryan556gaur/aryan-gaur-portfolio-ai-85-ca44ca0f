@@ -166,7 +166,7 @@ const Hero = () => {
             <ArrowRight size={18} />
           </a>
           <a 
-            href="https://drive.google.com/file/d/1fdTTkJChtQqz0CAH-9_V-8nMJ0VGv-yp/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Sw5PJJlnHRw1TYIlKn4ycmjtDg4_G9Yb/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"
