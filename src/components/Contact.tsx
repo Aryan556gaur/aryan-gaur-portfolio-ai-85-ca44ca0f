@@ -9,7 +9,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: Mail, label: "Email", value: "aryangaur556@gmail.com", href: "mailto:aryangaur556@gmail.com" },
     { icon: Phone, label: "Phone", value: "+91 6264039881", href: "tel:+916264039881" },
-    { icon: MapPin, label: "Location", value: "Gwalior, India", href: "#" }
+    { icon: MapPin, label: "Location", value: "Delhi, India", href: "#" }
   ];
 
   const socialLinks = [

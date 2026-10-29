@@ -8,29 +8,28 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: "Intern Software Developer",
+      title: "AI/ML Intern",
+      company: "Woofly.in",
+      location: "Remote",
+      period: "April 2026 – September 2026",
+      achievements: [
+        "Built an end-to-end pet-analysis pipeline that processes pet images across multiple physical attributes to produce automated pet profiles.",
+        "Developed a personalized grooming recommendation engine using attribute-based similarity scoring, mapping 1000+ pet profiles to grooming styles/services.",
+        "Improved recommendation relevance by 45% and cut manual assessment effort by 65%."
+      ],
+      technologies: ["Computer Vision", "Recommendation Systems", "Python", "Image Processing", "REST APIs"]
+    },
+    {
+      title: "Software Developer Intern",
       company: "Indian Air Force",
       location: "Gwalior",
       period: "October 2024 – May 2025",
       achievements: [
-        "Developed an AI-powered training simulator, improving knowledge retention by 76% through interactive simulations.",
-        "Integrated a RAG-based AI system, reducing query response time by 40% for real-time, contextual learning.",
-        "Built an AI bird detection system that classified 200+ bird species with 98% accuracy, improving aviation safety.",
-        "Designed a data pipeline that processed 10,000+ images per day, helping reduce bird strike incidents by 30%."
+        "Designed and integrated a backend document retrieval service into a training simulator, cutting query response time by 40% via optimized indexing, caching, and REST API design.",
+        "Deployed an image processing pipeline handling 10,000+ images/day, reducing bird-strike incidents by 30% through automated preprocessing and batch inference.",
+        "Shipped a computer vision module (20+ classes, 92% accuracy) into an existing aviation safety system with zero-downtime deployment and structured observability logging."
       ],
-      technologies: ["AI Development", "RAG Systems", "Deep Learning", "Computer Vision", "Python"]
-    },
-    {
-      title: "AI/ML Intern",
-      company: "F24Tech Softwares",
-      location: "Remote",
-      period: "June 2025 – August 2025",
-      achievements: [
-        "Built and deployed production-ready ML models exposed via REST APIs, enabling seamless integration with backend systems.",
-        "Implemented end-to-end MLOps workflows including model training, versioning, containerization, and automated deployment.",
-        "Worked on data preprocessing, feature engineering, and model optimization, improving model performance, scalability, and inference latency."
-      ],
-      technologies: ["Machine Learning", "MLOps", "REST APIs", "Docker", "Python"]
+      technologies: ["Computer Vision", "Document Retrieval", "REST API Design", "Caching", "Python"]
     }
   ];
 
@@ -44,13 +43,13 @@ const Experience = () => {
 
         <div className="max-w-4xl mx-auto space-y-8">
           {experiences.map((experience, expIndex) => (
-            <div 
-              key={expIndex} 
+            <div
+              key={expIndex}
               className={`card-base p-8 relative group overflow-hidden scroll-hidden ${isVisible ? 'scroll-visible' : ''} stagger-${expIndex + 2}`}
             >
               {/* Animated accent line */}
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-primary/20 rounded-l-xl transition-all duration-500 group-hover:w-1.5"></div>
-              
+
               {/* Hover glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -86,7 +85,7 @@ const Experience = () => {
 
                 <div className="flex flex-wrap gap-2">
                   {experience.technologies.map((tech) => (
-                    <span 
+                    <span
                       key={tech}
                       className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full font-medium group-hover:bg-primary/15 transition-colors"
                     >

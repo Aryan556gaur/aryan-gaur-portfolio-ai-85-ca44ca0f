@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import resumeAsset from '../assets/aryan-gaur-resume.pdf.asset.json';
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -144,7 +145,7 @@ const Hero = () => {
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 animate-fade-in animate-delay-200">
-          <span className="font-semibold text-foreground">AI Developer</span>
+          <span className="font-semibold text-foreground">AI Engineer</span>
           {' • '}
           <span className="font-semibold text-foreground">Machine Learning Engineer</span>
           {' • '}
@@ -153,7 +154,7 @@ const Hero = () => {
 
         {/* Tagline */}
         <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-10 animate-fade-in animate-delay-300">
-          I build scalable, user-centric AI solutions and love shipping clean, reliable systems.
+          I build and ship complete AI products — from LLM and computer vision models to cloud deployment.
         </p>
 
         {/* CTA Buttons */}
@@ -165,8 +166,8 @@ const Hero = () => {
             View Projects
             <ArrowRight size={18} />
           </a>
-          <a 
-            href="https://drive.google.com/file/d/1-b3vPiX-ABVVr3JH35myuzNwytinqb1n/view?usp=drive_link"
+          <a
+            href={resumeAsset.url}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"

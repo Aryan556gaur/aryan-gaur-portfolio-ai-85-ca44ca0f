@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { 
-  Code2, Database, Cloud, Brain, MessageSquare, Layers, Terminal, GitBranch
+import {
+  Brain, Code2, Database, Cloud, Network, Terminal, GitBranch, Layers
 } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -9,14 +9,14 @@ const Skills = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   const skillCategories = [
-    { title: "Machine Learning", icon: Brain, skills: ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning"] },
-    { title: "Deep Learning", icon: Layers, skills: ["Image Classification", "Object Detection", "Object Tracking", "Face Recognition", "Image-to-Text"] },
-    { title: "Natural Language Processing", icon: MessageSquare, skills: ["RAG", "Fine-tuning", "Sentiment Analysis", "GANs", "Text Generation", "Prompt Engineering"] },
-    { title: "Frameworks", icon: Code2, skills: ["Flask", "FastAPI", "LlamaIndex", "LangChain", "TensorFlow", "PyTorch"] },
-    { title: "Databases", icon: Database, skills: ["MySQL", "MongoDB", "AstraDB", "Pinecone"] },
-    { title: "Cloud & DevOps", icon: Cloud, skills: ["AWS", "Microsoft Azure", "Git", "GitHub"] },
-    { title: "Languages", icon: Terminal, skills: ["Python", "C", "C++", "Pandas", "NumPy", "Matplotlib"] },
-    { title: "Tools", icon: GitBranch, skills: ["VS Code", "Jupyter", "Git", "Docker"] }
+    { title: "AI/ML Engineering", icon: Brain, skills: ["LLM Integration & Fine-Tuning", "Multi-Agent Systems", "Generative AI", "Computer Vision", "NLP", "Model Deployment"] },
+    { title: "Deep Learning", icon: Layers, skills: ["Image Classification", "Object Detection", "Face Recognition", "TensorFlow", "PyTorch"] },
+    { title: "Frameworks", icon: Code2, skills: ["FastAPI", "Flask", "LangChain", "LlamaIndex", "LangGraph"] },
+    { title: "Databases", icon: Database, skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "AstraDB", "SQLite"] },
+    { title: "Cloud & DevOps", icon: Cloud, skills: ["AWS (EC2, S3)", "Docker", "Git & GitHub", "CI/CD", "Vercel", "Linux"] },
+    { title: "System Design", icon: Network, skills: ["Distributed Systems", "Caching", "Load Balancing", "Message Queues", "Rate Limiting"] },
+    { title: "Languages", icon: Terminal, skills: ["Python", "C", "C++", "SQL"] },
+    { title: "Core CS", icon: GitBranch, skills: ["Data Structures & Algorithms", "OOP", "Operating Systems", "Computer Networks", "DBMS"] }
   ];
 
   return (
@@ -29,15 +29,15 @@ const Skills = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, index) => (
-            <div 
+            <div
               key={index}
               className={`card-base card-hover p-6 text-center group relative overflow-hidden scroll-scale-hidden ${isVisible ? 'scroll-scale-visible' : ''} stagger-${Math.min(index + 1, 8)}`}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="skill-icon-container mx-auto mb-4 relative z-10">
-                <category.icon 
-                  size={28} 
-                  className="text-primary group-hover:scale-110 transition-transform duration-300" 
+                <category.icon
+                  size={28}
+                  className="text-primary group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <h3 className="font-semibold text-foreground mb-3 text-sm relative z-10">
