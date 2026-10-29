@@ -10,7 +10,7 @@ const Achievements = () => {
     {
       name: "LeetCode",
       icon: "🏆",
-      stats: ["Completed 300+ algorithmic challenges", "Rating: 1800", "Top Problem Solver"],
+      stats: ["Solved 300+ DSA problems", "Rating: 1800", "Strong complexity optimization"],
       link: "https://leetcode.com/u/12Aryanleet/",
       color: "from-orange-400 to-yellow-500"
     },
@@ -24,7 +24,7 @@ const Achievements = () => {
   ];
 
   const certifications = [
-    { title: "NVIDIA — Deep Learning Fundamentals", issuer: "NVIDIA", icon: "🎓" }
+    { title: "GATE 2026 Qualified — Data Science & AI", issuer: "AIR 6791 / 69,242 · Valid till March 2029", icon: "🎓" }
   ];
 
   return (
@@ -39,7 +39,7 @@ const Achievements = () => {
         <div className={`mb-12 scroll-hidden ${isVisible ? 'scroll-visible' : ''} stagger-2`}>
           <h3 className="text-xl font-semibold text-foreground mb-6 text-center flex items-center justify-center gap-2">
             <Award className="text-primary" size={24} />
-            Certifications
+            Certifications & Achievements
           </h3>
           <div className="flex justify-center">
             {certifications.map((cert, index) => (
@@ -61,7 +61,7 @@ const Achievements = () => {
             <Code className="text-primary" size={24} />
             Competitive Programming
           </h3>
-          
+
           <div className="grid md:grid-cols-3 gap-6">
             {competitiveProfiles.map((profile, index) => (
               <a
@@ -72,13 +72,13 @@ const Achievements = () => {
                 className={`card-base card-hover p-6 group block relative overflow-hidden scroll-scale-hidden ${isVisible ? 'scroll-scale-visible' : ''} stagger-${index + 4}`}
               >
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`}}></div>
-                
+
                 <div className="flex items-center gap-3 mb-4 relative z-10">
                   <span className="text-3xl group-hover:scale-110 transition-transform duration-300">{profile.icon}</span>
                   <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{profile.name}</h4>
                   <ExternalLink size={16} className="text-muted-foreground group-hover:text-primary transition-colors ml-auto" />
                 </div>
-                
+
                 <div className="space-y-2 relative z-10">
                   {profile.stats.map((stat, statIndex) => (
                     <p key={statIndex} className="text-muted-foreground text-sm flex items-start gap-2">
