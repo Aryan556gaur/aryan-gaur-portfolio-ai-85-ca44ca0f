@@ -21,19 +21,18 @@ const About = () => {
           {/* Left Column - Description */}
           <div className="space-y-6">
             <p className={`text-muted-foreground leading-relaxed text-lg scroll-hidden-left ${isVisible ? 'scroll-visible-x' : ''} stagger-2`}>
-              I'm a Bachelor of Technology student with a strong foundation in Data Structures, 
-              Algorithms, and Object-Oriented Programming—passionate about developing innovative, 
-              high-impact AI solutions.
+              I'm an AI Engineer who builds and ships complete AI products — LLM and computer
+              vision models behind them, and the cloud deployment that brings them to production.
             </p>
-            
+
             <p className={`text-muted-foreground leading-relaxed scroll-hidden-left ${isVisible ? 'scroll-visible-x' : ''} stagger-3`}>
-              I specialize in RAG systems, machine learning, and deep learning systems, 
-              with experience building production-ready AI solutions that improve retrieval 
-              performance and enable privacy-aware model deployment.
+              I'm hands-on with LangChain multi-agent systems, REST API design, Redis caching, and
+              PostgreSQL, taking features from idea to production using Python, PyTorch, TensorFlow,
+              Docker, and AWS.
             </p>
 
             <p className={`text-muted-foreground leading-relaxed scroll-hidden-left ${isVisible ? 'scroll-visible-x' : ''} stagger-4`}>
-              I regularly sharpen problem-solving through competitive programming on LeetCode 
+              I regularly sharpen problem-solving through competitive programming on LeetCode
               and Codeforces with over 300+ DSA problems solved.
             </p>
           </div>
@@ -44,7 +43,7 @@ const About = () => {
               <GraduationCap className="text-primary" size={24} />
               Education
             </h3>
-            
+
             <div className="card-base card-hover p-6 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <h4 className="text-lg font-semibold text-primary mb-2 relative z-10">
@@ -53,9 +52,12 @@ const About = () => {
               <p className="text-foreground font-medium mb-2 relative z-10">
                 Bachelor of Technology - Computer Science and Engineering
               </p>
+              <p className="text-foreground text-sm font-medium mb-2 relative z-10">
+                CGPA: 7.64
+              </p>
               <div className="flex items-center gap-2 text-muted-foreground text-sm relative z-10">
                 <Calendar size={14} />
-                <span>October 2022 - April 2026</span>
+                <span>October 2022 – May 2026</span>
               </div>
             </div>
           </div>
